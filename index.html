@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>贪吃蛇</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <header class="header">
+        <h1>贪吃蛇</h1>
+        <p>方向键或 WASD 控制移动，空格键暂停/继续。</p>
+      </header>
+      <section class="panel">
+        <div class="stats">
+          <div>分数：<span id="score">0</span></div>
+          <div>最高分：<span id="best-score">0</span></div>
+          <button id="restart" type="button">重新开始</button>
+        </div>
+        <canvas id="game" width="480" height="480" aria-label="贪吃蛇游戏区域"></canvas>
+      </section>
+      <section class="tips">
+        <h2>玩法提示</h2>
+        <ul>
+          <li>吃到食物后长度增加并加分。</li>
+          <li>撞到自己或墙壁即结束。</li>
+          <li>暂停时可以计划下一步路线。</li>
+        </ul>
+      </section>
+    </main>
+    <div id="overlay" class="overlay hidden" role="dialog" aria-live="polite">
+      <div class="overlay-card">
+        <h2 id="overlay-title">游戏结束</h2>
+        <p id="overlay-message">你的得分为 0 分。</p>
+        <button id="overlay-action" type="button">再来一局</button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
